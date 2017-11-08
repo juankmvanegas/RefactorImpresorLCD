@@ -40,6 +40,7 @@ namespace ImpresorLCD
                 Console.WriteLine(Environment.NewLine + "Ingrese escala de impresión de 1 a 10 y número a imprimir separados por ',':");
                 imp.captura = Console.ReadLine();
 
+                imp.verificar = true;
                 //Ciclo que controla la vericidad de los datos
                 while (imp.verificar == true)
                 {
@@ -56,6 +57,7 @@ namespace ImpresorLCD
                             imp.captura = Console.ReadLine();
                             imp.verificar = true;
                         }
+                        
                         else if (imp.size == 0 && comprobar == 0)
                         {
                             imp.continuar = false;
@@ -76,6 +78,7 @@ namespace ImpresorLCD
                 }
 
                 imp.Imprimir(imp.numero, imp.size);
+                imp.numero = string.Empty;
             }
             Environment.Exit(0);
 
